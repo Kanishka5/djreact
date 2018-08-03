@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import dj_database_url
-from decouple import config
-#remove top two
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +24,7 @@ SECRET_KEY = '!=7=+0-o&6lcl^-fn#u7h)i^e)1)^)s@s12=x3rcvgtfyu-o*g'
 #SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-DEBUG = config('DEBUG', cast=bool)
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -83,17 +80,15 @@ WSGI_APPLICATION = 'ccawebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db',
         # 'NAME': config('DB_NAME'),
         # 'USER': config('DB_USER'),
         # 'PASSWORD': config('DB_PASSWORD'),
         # 'HOST': config('DB_HOST'),
         # 'PORT': '',
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'cca',
-        # 'USER': 'revanth',
-        # 'PASSWORD': '147258369',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cca',
+        'USER': 'revanth',
+        'PASSWORD': '147258369',
 
     }
 }
@@ -137,6 +132,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
