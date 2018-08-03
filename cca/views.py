@@ -28,7 +28,7 @@ def SignUp(request):
          #    instance.save()
             # file is saved
             form.save()
-            return HttpResponseRedirect('/accounts/login/')
+            return HttpResponseRedirect('/profile/')
     else:
         form = CustomUserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
