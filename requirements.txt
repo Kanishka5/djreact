@@ -2,8 +2,6 @@ dj-database-url==0.5.0
 Django==2.1
 gunicorn==19.9.0
 Pillow==5.1.0
-python-apt==1.6.2
-python-debian==0.1.32
 pytz==2018.3
 whitenoise==3.3.1
 psycopg2==2.7.2
